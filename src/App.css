@@ -1,0 +1,166 @@
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.app {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Search Bar */
+input {
+  padding: 10px;
+  width: 70%;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #2575fc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1a5bbf;
+}
+
+/* Weather Card */
+.weather {
+  margin-top: 20px;
+}
+
+.weather h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.weather img {
+  width: 100px;
+  height: 100px;
+}
+
+.weather p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+/* Unit Toggle */
+.unit-toggle {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.unit-toggle button {
+  background: none;
+  border: 2px solid white;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.unit-toggle button.active {
+  background-color: white;
+  color: #2575fc;
+}
+
+/* Error Message */
+.error {
+  color: #ff6b6b;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+/* Current Location Button */
+.current-location-btn {
+  padding: 10px 20px;
+  background-color: #2575fc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.current-location-btn:hover {
+  background-color: #1a5bbf;
+}
+
+/* Search Suggestions */
+.search-container {
+  position: relative;
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 10;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+  color: black;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Logo Styles */
+.logo {
+  width: 50px; /* Adjust size as needed */
+  height: 50px; /* Adjust size as needed */
+  margin-right: 10px;
+  border-radius: 12px; /* Adjust the value to control the roundness */
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
