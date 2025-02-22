@@ -10,8 +10,13 @@ const App = () => {
   const [unit, setUnit] = useState('C'); // 'C' for Celsius, 'F' for Fahrenheit
   const [searchHistory, setSearchHistory] = useState([]); // Store search history
 
-  const API_KEY = '935d8398ac6e73a4dcc9550f2d381a26'; // Replace with your API key
+  const API_KEY = '935d8398ac6e73a4dcc9550f2d381a26';
   const API_URL = `https://api.openweathermap.org/data/2.5/weather?units=metric&appid=${API_KEY}`;
+
+  // useEffect example for component mount
+  useEffect(() => {
+    console.log('App component mounted or updated');
+  }, []); // Runs only once on mount
 
   // Fetch weather by city name
   const handleSearch = async (city) => {
@@ -21,7 +26,6 @@ const App = () => {
       const data = await response.json();
       setWeatherData(data);
       setError('');
-      // Add to search history
       setSearchHistory((prev) => [...prev, city]);
     } catch (err) {
       setError(err.message);
@@ -51,7 +55,7 @@ const App = () => {
           const { latitude, longitude } = position.coords;
           fetchWeatherByCoords(latitude, longitude);
         },
-        (err) => {
+        () => {
           setError('Geolocation access denied. Please enter a city name.');
         }
       );
@@ -68,8 +72,8 @@ const App = () => {
   return (
     <div className="app">
       <header>
-      <img src={logo} alt="Weather App Logo" className="logo" />
-      <h1>Weather App</h1>
+        <img src={logo} alt="Weather App Logo" className="logo" />
+        <h1>Weather App</h1>
       </header>
       <Search onSearch={handleSearch} searchHistory={searchHistory} />
       <button className="current-location-btn" onClick={handleCurrentLocation}>
@@ -104,7 +108,6 @@ const App = () => {
       )}
     </div>
   );
-  
 };
 
 export default App;
